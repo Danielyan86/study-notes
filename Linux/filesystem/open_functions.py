@@ -36,3 +36,4 @@ print(f"read content as list {content}")
 string = "1" * 1000000
 with open("test_writelines_long_string.txt", "w", ) as f:
     res = f.writelines(string)
+    print("print file descriptor {}".format(f.fileno()))
