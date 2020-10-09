@@ -6,7 +6,7 @@
 通配符早于正则表达式出现，可以看作是原始的正则表达式。它的功能没有正则那么强大灵活，但是胜在简单和方便。
 
 # 用法
-- shell 通配符 / glob 模式通常用来匹配目录以及文件，而不是文本！！！
+> shell 通配符 / glob 模式通常用来匹配目录以及文件，而不是文本！！！
 - 通配符是先解释，再执行。
 ```
 bash-3.2$ ls *.txt
@@ -88,9 +88,14 @@ report09.txt report10.txt report2.txt report4.txt
 
 ## ** 
 - bash version >= 4.0 
-- shopt -s globstar。 确认globstar 打开，否则**会被翻译成*使用
+> shopt -s globstar  确认globstar 打开，否则`**`会被翻译成`*`使用
+### shopt命令
+用于显示和设置shell中的行为选项，通过这些选项以增强shell易用性。shopt命令若不带任何参数选项，则可以显示所有可以设置的shell操作选项。
+- -s：激活指定的shell行为选项；
+- -u：关闭指定的shell行为选项。
 
-列出出当前文件夹下面所有文件
+
+列出出当前目录以及**子目录**下面所有文件
 ```
 ls **
 GLOB/GLOB(文件匹配模式).md		filesystem/open_functions.py		filesystem/requests_downlarge_file.py
@@ -109,6 +114,8 @@ open_function_issatty.py	open_mode.py			文件读写详解.md
 regex:
 regex.sh
 ```
+
+
 
 
 ### [...] 
