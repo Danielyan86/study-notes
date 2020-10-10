@@ -19,7 +19,7 @@ a.txt	ab.txt	abc.txt
 bash-3.2$ echo d*
 d*
 ```
-- 没有加路径情况下，只适用于单层路径匹配。
+- 没有加路径情况下，只适用于当前目录路径匹配。
 - 文件名不建议使用通配符，比如*.txt, z
 
 ## 语法
@@ -114,9 +114,6 @@ open_function_issatty.py	open_mode.py			文件读写详解.md
 regex:
 regex.sh
 ```
-
-
-
 
 ### [...] 
 匹配方括号之中的任意一个字符，比如[aeiou]可以匹配五个元音字母。
