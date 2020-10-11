@@ -15,12 +15,11 @@ a.txt	ab.txt	abc.txt
 *.txt 先被解析成ls a.txt	ab.txt	abc.txt，再执行。
 
 - 通配符不匹配，会原样输出。
+- 文件名不建议使用通配符，比如*.txt, z
 ```
 bash-3.2$ echo d*
 d*
 ```
-- 没有加路径情况下，只适用于当前目录路径匹配。
-- 文件名不建议使用通配符，比如*.txt, z
 
 ## 语法
 |字符	|解释|
@@ -36,7 +35,7 @@ d*
 
 |字符	| 意义|
 | ---- | ----  |
-|[:alnum:]|	任意数字或者字母|
+|[:alnum:] / 任意数字或者字母|
 |[:alpha:]	|任意字母|
 |[:space:]	|空格|
 |[:lower:]	|小写字母
@@ -47,7 +46,6 @@ d*
 |[:print:]	|可打印字符
 |[:punct:]	|标点符号
 |[:xdigit:]	|十六进制数
-|[:blank:]	|空白字符（未验证）
 
 ## 例子
 ### ?
@@ -87,15 +85,33 @@ report09.txt report10.txt report2.txt report4.txt
 ```
 
 ## ** 
+### 前置条件
 - bash version >= 4.0 
 > shopt -s globstar  确认globstar 打开，否则`**`会被翻译成`*`使用
 ### shopt命令
 用于显示和设置shell中的行为选项，通过这些选项以增强shell易用性。shopt命令若不带任何参数选项，则可以显示所有可以设置的shell操作选项。
 - -s：激活指定的shell行为选项；
-- -u：关闭指定的shell行为选项。
+- -u：关闭指定的shell行为选项
+```
+bash-5.0$ shopt -s
+checkwinsize   	on
+cmdhist        	on
+complete_fullquote	on
+expand_aliases 	on
+extquote       	on
+force_fignore  	on
+globasciiranges	on
+globstar       	on
+hostcomplete   	on
+interactive_comments	on
+progcomp       	on
+promptvars     	on
+sourcepath     	on
+```
 
-
-列出出当前目录以及**子目录**下面所有文件
+### 用法
+#### 遍历某个路径下面所有目录和文件
+- 列出出当前目录以及**子目录**下面所有文件
 ```
 ls **
 GLOB/GLOB(文件匹配模式).md		filesystem/open_functions.py		filesystem/requests_downlarge_file.py
@@ -113,6 +129,13 @@ open_function_issatty.py	open_mode.py			文件读写详解.md
 
 regex:
 regex.sh
+```
+
+#### 查找某个路径下面符合要求的文件
+- 列出study-notes目录以及子目录下面符合*.txt模式的所有文件
+```
+ls study-notes/**/*.txt
+study-notes/a.txt	study-notes/b.txt
 ```
 
 ### [...] 
@@ -154,6 +177,21 @@ bash-3.2$ echo {aac,aec}
 aac aec
 ```
 
+### 大小写敏感匹配
+```
+bash-5.0$ touch macy
+bash-5.0$ echo M*
+Movie-scrapy
+bash-5.0$ shopt -s nocaseglob  # 关闭大小写敏感
+bash-5.0$ echo M*
+Movie-scrapy macy
+```
+
+### 专用字符集 [:alnum:]
+```
+ls study-notes/**/[:alnum:].txt
+study-notes/a.txt
+```
 ## .gitignore
 git 的 .gitignore 文件可以使用 glob 模式匹配， 另外还有一些规则：
 - 所有空行或者以 # 开头的行都会被 Git 忽略
@@ -165,3 +203,4 @@ git 的 .gitignore 文件可以使用 glob 模式匹配， 另外还有一些规
 - http://www.ruanyifeng.com/blog/2018/09/bash-wildcards.html
 - https://www.cnblogs.com/divent/p/5762154.html
 - https://medium.com/@leedowthwaite/why-most-people-only-think-they-understand-wildcards-63bb9c2024ab
+- https://appcodelabs.com/advanced-wildcard-patterns-most-people-dont-know
