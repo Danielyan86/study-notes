@@ -1,0 +1,1 @@
+https://learn.hashicorp.com/tutorials/vault/agent-templates?in=vault/app-integration
