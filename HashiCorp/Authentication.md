@@ -99,13 +99,7 @@ policies                ["default"]
 token_meta_role_name    my-role
 ```
 
-
-这个时候得到了一对新的role_id和secret_id
-然后我们再新开一个窗口，采用*APProle*的方式来进行认证
-
-
-### cli 方式
-默认路径approle，如果需要改变path，指定auth/my-path/login 替换掉
-
-### agent 认证
-
+## 注意
+生成的role_id 和secret_id 是针对应用级别的认证，不是server管理员级别的，比如无法在一个新的终端使用类似
+ vault login -method=approle role_id=41575b06-7521-a1dc-0e15-86e45a4c240d secret_id=94afc17a-cdb3-86c1-4a78-03e54a5af4f3
+ 命令直接进行认证。不知道是否有配置可以修改默认认证方式。用dev方式启动的server默认认证方式是token。
