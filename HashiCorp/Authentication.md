@@ -59,11 +59,11 @@ token/      token      auth_token_278caa58      token based credentials
 添加一个role，叫my-role
 ```shell script
 vault write auth/approle/role/my-role \
-    secret_id_ttl=10m \
-    token_num_uses=10 \
-    token_ttl=20m \
-    token_max_ttl=30m \
-    secret_id_num_uses=40
+    secret_id_ttl=1000m \
+    token_num_uses=100 \
+    token_ttl=200m \
+    token_max_ttl=300m \
+    secret_id_num_uses=400
 Success! Data written to: auth/approle/role/my-role
 ```
 读取新添加的role-id
@@ -86,7 +86,7 @@ secret_id_accessor    e9b737fa-0d93-240b-a00c-8c69d297c730
 ```shell script
 vault write auth/approle/login \
     role_id=59bc028a-b24a-a36a-a8c7-82a1c9f54fa5 \
-    secret_id=3ca5adbc-711b-5026-fa64-b45023e44678
+    secret_id=b5a5360c-bb47-71a6-9c7f-8b7479afa9e1
 Key                     Value
 ---                     -----
 token                   s.ULxTLUhCG5sDWqWMzstjJlRT
