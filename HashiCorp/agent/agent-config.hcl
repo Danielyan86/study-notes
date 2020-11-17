@@ -14,7 +14,7 @@ auto_auth {
        }
    }
 
-   # 验证成功之后，token会写入sink配置的文件
+   # 验证成功之后，token会写入sink配置的文件 此部分为可选配置
    sink "file" {
        config = {
            path = "approleToken"
@@ -26,4 +26,9 @@ auto_auth {
 template {
   source      = "./customer.tmpl"
   destination = "./customer.txt"
+}
+
+template {
+  source      = "./customer.tmpl"
+  destination = "./customer2.txt"
 }
