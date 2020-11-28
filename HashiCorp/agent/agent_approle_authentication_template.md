@@ -4,6 +4,7 @@
 # 步骤
 ## 数据准备
 把 data.json 里面数据写入vault
+
 ```shell script
 vault kv put secret/customers/acme @data.json
 $ vault kv put secret/customers/acme @data.json
@@ -54,7 +55,6 @@ Success! Data written to: auth/approle/role/apps
 ```shell script
 vault read -format=json auth/approle/role/apps/role-id | jq  -r '.data.role_id' > roleID
 vault write -f -format=json auth/approle/role/apps/secret-id | jq -r '.data.secret_id' > secretID
-
 ```
 
 ## 检查配置文件
@@ -81,13 +81,12 @@ vault agent -config=agent-config.hcl -log-level=debug
 2020/11/15 14:53:36.904141 [DEBUG] (runner) vault.read(secret/data/customers/acme) is still needed
 2020/11/15 14:53:36.904162 [DEBUG] (runner) watching 1 dependencies
 2020/11/15 14:53:36.904170 [DEBUG] (runner) all templates rendered
-
 ```
 根据输出日志可以看到，自动验证通过之后，会根据模板渲染日志（rendering "./customer.tmpl" => "./customer.txt"）。
 
 ## 验证agent功能
 新开一个终端，更新secret内容
-```
+```shell script
 $ vault kv patch secret/customers/acme contact_email=dongdong@fk.com
 Key              Value
 ---              -----
@@ -99,7 +98,7 @@ version          4
 ```
 
 确认更新成功之后，agent大概在5分钟内会自动重新渲染模板内容
-```
+```shell script
 $ vault kv get secret/customers/acme
 ====== Metadata ======
 Key              Value
