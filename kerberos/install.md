@@ -53,7 +53,7 @@ Nov 28 16:25:42 sheldon systemd[1]: Started Kerberos 5 Key Distribution Center.
 ```
 
 ## 添加admin用户
-一旦KDC正常运行，则需要一个管理员用户–the admin principal。建议使用和平时经常用的用户名有所区别。在终端提示符下输入kadmin.local：
+一旦KDC正常运行，则需要一个管理员用户the admin principal。建议使用和平时经常用的用户名有所区别。在终端提示符下输入kadmin.local：
 成功之后会进入一个交互式命令行终端，可以通过？查看使用方法。使用 addprinc sheldon/admin命令添加用户,这个地方添加用户之后，安装有kerberos客户端的机器才可以才可以用对应的用户进行第一次验证
 ```shell script
 sudo kadmin.local
