@@ -1,5 +1,8 @@
 # udpate ubuntu source
 - use tsinghua https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/
+# Configure copy&paste from host to virtual box
+- 常规高级里共享粘贴板已经选中双向
+- Device - insert geust CD image 
 
 # install some tools
 - sudo apt install curl vim git tmux -y
