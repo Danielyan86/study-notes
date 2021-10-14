@@ -27,8 +27,10 @@
 - https://github.com/powerline/fonts
 ## install theme bullet-train
 - https://github.com/caiogondim/bullet-train.zsh
-## install plugin
+## config&install zsh plugin
+### config the plugin in zsh file directly
 - git zsh-autosuggestions zsh-completions zsh-syntax-highlighting
+### need to install first
 - autojump https://github.com/wting/autojump
 ## change defalut folder
 - add cd ~ in .zshrc file
