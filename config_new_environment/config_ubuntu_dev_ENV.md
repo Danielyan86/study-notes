@@ -34,7 +34,10 @@
 ### config the plugin in zsh file directly
 - git 
 ### need to install first
-- zsh-autosuggestions zsh-completions zsh-syntax-highlighting
+- zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions
+    - git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+- zsh-completions zsh-syntax-highlighting
+    - git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 - autojump https://github.com/wting/autojump
 ## change defalut folder
 - add cd ~ in .zshrc file
