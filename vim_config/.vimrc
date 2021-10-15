@@ -26,6 +26,7 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Need to remap the tab to ctrl first,install GNOME tweaks first
 " remap keyboard
 imap <C-i> <esc>
 vmap <C-i> <esc>
