@@ -51,6 +51,15 @@
 - https://www.anaconda.com/products/individual#linux
 
 # install pin yin
+- Install the language 
+sudo apt install language-pack-gnome-zh-hans
+- install the input method fcixt
+- config the language
+- config the fcixt
+
+# install docker
+check docker official site
+- sudo apt-get remove docker docker-engine docker.io containerd runc
 https://fcitx-im.org/wiki/Install_and_Configure
 
 ## unintall the ibus
