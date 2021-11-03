@@ -51,3 +51,14 @@
 - https://www.anaconda.com/products/individual#linux
 
 # install pin yin
+https://fcitx-im.org/wiki/Install_and_Configure
+
+## unintall the ibus
+## install the fcitx
+## config fcitx
+- open ~/.pam_environment with your text editor and set the following environment variables to start fcitx
+```
+XMODIFIERS DEFAULT=@im=fcitx
+GTK_IM_MODULE DEFAULT=fcitx
+QT_IM_MODULE DEFAULT=fcitx
+```
