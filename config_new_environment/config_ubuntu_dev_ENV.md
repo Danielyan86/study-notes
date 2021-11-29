@@ -62,6 +62,19 @@ check docker official site
 - sudo apt-get remove docker docker-engine docker.io containerd runc
 https://fcitx-im.org/wiki/Install_and_Configure
 
+## update docker permisson 
+Create a docker group (it doesn't matter if this already exists).
+
+- sudo groupadd docker
+Add your use to the docker group.
+
+- sudo usermod -aG docker $USER
+In order for that change to take effect you need to log out and back on again.
+
+If you have completed these steps and find that you are still having problems with the permissions error then you'll need to allow more access to the docker.sock file. This can be done using the following command.
+
+- sudo chmod 666 /var/run/docker.sock
+
 ## unintall the ibus
 ## install the fcitx
 ## config fcitx
