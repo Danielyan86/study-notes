@@ -50,13 +50,6 @@
 # install anaconda
 - https://www.anaconda.com/products/individual#linux
 
-# install pin yin
-- Install the language 
-sudo apt install language-pack-gnome-zh-hans
-- install the input method fcixt
-- config the language
-- config the fcixt
-
 # install docker
 check docker official site
 - sudo apt-get remove docker docker-engine docker.io containerd runc
@@ -75,6 +68,12 @@ If you have completed these steps and find that you are still having problems wi
 
 - sudo chmod 666 /var/run/docker.sock
 
+# install pin yin
+- Install the language 
+sudo apt install language-pack-gnome-zh-hans
+- install the input method fcixt
+- config the language
+- config the fcixt
 ## unintall the ibus
 ## install the fcitx
 ## config fcitx
