@@ -1,0 +1,2 @@
+- install code
+- install homebrew
