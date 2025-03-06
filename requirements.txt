@@ -1,0 +1,5 @@
+yfinance>=0.2.36
+matplotlib>=3.8.0
+pandas_datareader>=0.10.0
+tushare>=2.1.0
+numpy>=1.20.0 
